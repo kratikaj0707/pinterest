@@ -26,7 +26,26 @@ export default async function decorate(block) {
     if (section) section.classList.add(`nav-${c}`);
   });
   const navLogin = nav.querySelector('.nav-login');
-
+  if (navLogin) {
+    
+    if (localStorage.getItem('userName')) {
+      navLogin.innerHTML = ''; // Clear any existing content
+  
+      // User is logged in – show logout button
+      const logoutBtn = document.createElement('button');
+      logoutBtn.textContent = 'Log out';
+      
+      logoutBtn.className = 'logout-btn';
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('userId')
+        localStorage.removeItem('userName');
+        
+  
+        window.location.reload(); // Reload page or redirect to login
+      });
+      navLogin.appendChild(logoutBtn);
+    } 
+  }
   
   
   const navBrand = nav.querySelector('.nav-brand');

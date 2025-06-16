@@ -2,7 +2,7 @@
 header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
-  z-index: 2;
+  z-index: 100;
   position: fixed;
 }
 
@@ -35,7 +35,7 @@ header nav .nav-tools {
 header .nav-brand {
   grid-area: brand;
   flex-basis: 128px;
-  font-size: var(--heading-font-size-m);
+  font-size: var(--heading-font-size-l);
   font-weight: 700;
   line-height: 1.15;
   color:var( --link-color--red);
@@ -74,7 +74,7 @@ header nav .nav-login .default-content-wrapper{
 header nav .nav-login .default-content-wrapper >p{
   margin-top: 0.3em;
 }
-header nav .nav-login .default-content-wrapper >p >a{
+header nav .nav-login .default-content-wrapper >p >a , .nav-login .logout-btn{
   font-size: var(--body-font-size-xs);
   float: right;
   margin: 0;
@@ -163,7 +163,7 @@ header .nav-search-wrapper .icon-search{
     margin-top: 0.8em;
 
   }
-  header nav .nav-login .default-content-wrapper >p>a{
+  header nav .nav-login .default-content-wrapper >p>a , .nav-login .logout-btn{
     font-size: var(--body-font-size-s);
     padding: 8px 16px;
   }
