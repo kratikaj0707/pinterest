@@ -22,5 +22,7 @@ indices:
       tags:
         select: head > meta[property="og:tags"]
         value: attribute(el,'content')
-
+      template:
+        select: head > meta[property="og:template"]
+        value: attribute(el, 'content')
     
