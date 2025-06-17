@@ -28,7 +28,93 @@ header nav .nav-tools {
   display: none;
 }
 
+/* .search-suggestions-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  background: #fff;
+  padding: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+} */
 
+
+.search-suggestions-container {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  overflow-y: auto;
+  max-height: 300px;
+  
+  transition: opacity 0.3s ease;
+}
+.search-suggestions-container::-webkit-scrollbar {
+  display: none;
+}
+.search-suggestions-container.visible {
+  display: grid;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-card {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  /* justify-content: center; */
+  background: #f4f4f4;
+  border-radius: 16px;
+  /* padding: 8px; */
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  /* text-align: center; */
+  height: 80px;
+  /* margin: 10px; */
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.search-card:hover {
+  transform: scale(1.03);
+  background: #eaeaea;
+}
+
+.search-card img {
+  width: 40%;
+  height: auto;
+  /* width: 40px;
+  height: 40px; */
+  /* border-radius: 12px; */
+  object-fit: cover;
+  /* margin-bottom: 6px; */
+}
+.search-card p{
+  width: 60%;
+  font-size: var(--body-font-size-s);
+  color: var(--text-color);
+  font-weight: 700;
+  text-align: center;
+  text-justify: center;
+}
 
 
 
