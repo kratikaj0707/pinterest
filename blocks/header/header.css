@@ -24,25 +24,10 @@ header nav {
 }
 
 header nav .nav-tools {
-  /* visibility: hidden; */
+  
   display: none;
 }
 
-/* .search-suggestions-container {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 12px;
-  background: #fff;
-  padding: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  max-height: 300px;
-  overflow-y: auto;
-} */
 
 
 .search-suggestions-container {
@@ -135,6 +120,9 @@ header nav .nav-brand img {
 header nav .nav-brand a{
   display: flex;
 }
+header nav .nav-brand a:hover{
+  color: var(--link-color--red);
+}
 header nav .nav-brand a> span{
   width: auto;
 }
@@ -175,7 +163,7 @@ header nav .nav-login .default-content-wrapper >p >a , .nav-login .logout-btn{
     place-items: center;
     font-size: var(--heading-font-size-l);
     font-weight: 700;
-    line-height: 0.9;
+    line-height: 1.4;
     color:var( --link-color--red);
   }
   
@@ -235,6 +223,9 @@ header .nav-search-wrapper .icon-search{
 @media (width >= 900px) {
   header nav{
     grid-template-columns: 11% 10% 64% 5% 10%;
+  }
+  header .nav-brand{
+    line-height: 0.9;
   }
   header nav .nav-sections .default-content-wrapper >p{
     background-color: var(--dark-color);
