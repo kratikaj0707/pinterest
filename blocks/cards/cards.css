@@ -171,6 +171,44 @@
   scrollbar-width: none; /* for Firefox */
   
 }
+.cards-wrapper .uneven ul > li .cards-card-image {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Overlay on hover */
+.cards-wrapper .uneven ul > li .cards-card-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Black overlay */
+  opacity: 0;
+  border-radius: 18px;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+ margin-bottom: 10px;
+}
+
+/* Text on hover */
+.cards-wrapper .uneven ul > li .cards-card-image::after {
+  content: "Open";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: var(--body-font-size-m);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+/* Hover effect triggers visibility */
+.cards-wrapper .uneven ul > li .cards-card-image:hover::before,
+.cards-wrapper .uneven ul > li .cards-card-image:hover::after {
+  opacity: 1;
+}
 
 
 
@@ -181,7 +219,6 @@
   
   margin: 0;
 }
-
 .cards-wrapper .uneven > ul>li .cards-card-image >picture>img{
   height: auto;
   aspect-ratio: auto;
@@ -206,6 +243,12 @@
   text-overflow: ellipsis;
  font-size: var(--body-font-size-xs);
  margin: 0;
+}
+
+.noFavorites {
+  text-align: center;
+  margin:50px;
+  color: var(--text-color, #333);
 }
 
 @media(width>=768px){

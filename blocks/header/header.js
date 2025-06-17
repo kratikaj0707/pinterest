@@ -25,10 +25,26 @@ export default async function decorate(block) {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
   });
+  const navFavorites=nav.querySelector(".nav-favorites");
   const navLogin = nav.querySelector('.nav-login');
+
+
+  const link = navFavorites.querySelector('div > p > a');
+
+if (link) {
+  link.addEventListener('click', (e) => {
+    const userId = localStorage.getItem('userId');
+    if (!userId) {
+      
+      alert("You are not logged in. Please log in to view favourites.");
+      link.href = "/login";
+     
+    }
+  });
+}
   if (navLogin) {
     
-    if (localStorage.getItem('userName')) {
+    if (localStorage.getItem('userId')) {
       navLogin.innerHTML = ''; // Clear any existing content
   
       // User is logged in – show logout button
