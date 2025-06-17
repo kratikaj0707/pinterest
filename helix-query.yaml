@@ -1,5 +1,5 @@
 indices:
-  website:
+  pinterest:
     include:
       - '**'
     exlude: []

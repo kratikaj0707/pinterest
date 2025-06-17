@@ -1,4 +1,5 @@
 export default async function decorate(block) {
+  
     const fields = [...block.querySelectorAll('p')];
     block.innerHTML = ''; // Clear block content
   
