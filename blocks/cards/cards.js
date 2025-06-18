@@ -13,8 +13,12 @@ export default async function decorate(block) {
     } catch (err) {
       console.error('Failed to fetch user favorites:', err);
     }
-  }
+  } let colorIndex = 0;
   [...block.children].forEach((row) => {
+
+    const bgColors = ['#FFCDD2', '#C8E6C9', '#BBDEFB', '#FFF9C4', '#D1C4E9'];
+    const isRowLayout = cardsBlock?.classList.contains('row');
+
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
@@ -22,7 +26,15 @@ export default async function decorate(block) {
         div.className = 'cards-card-image';
       } else {
         div.className = 'cards-card-body';
+
+        // ✅ Only apply background color if .row is present
+        if (isRowLayout) {
+
+          div.style.backgroundColor = bgColors[colorIndex % bgColors.length];
+          colorIndex++;
+        }
       }
+
     });
     if (cardsBlock?.classList.contains('uneven')) {
       const imageSrc = li.querySelector('picture img')?.src || '';
@@ -190,15 +202,15 @@ export default async function decorate(block) {
       const favorites = await res.json();
 
       if (!Array.isArray(favorites) || favorites.length === 0) {
-        const mainBlock=document.querySelector(".favoriteblock");
-        const head=mainBlock.querySelector("main >div >div >h1");
-        head.style.display="none";
+        const mainBlock = document.querySelector(".favoriteblock");
+        const head = mainBlock.querySelector("main >div >div >h1");
+        head.style.display = "none";
         const heading = document.createElement('h1');
         heading.innerHTML = "No favorites found!";
-        heading.className="noFavorites";
-      
+        heading.className = "noFavorites";
+
         block.append(heading);
-        
+
         return;
       }
 
