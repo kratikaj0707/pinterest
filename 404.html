@@ -36,6 +36,7 @@
       min-height: calc(100vh - var(--nav-height));
       display: flex;
       align-items: center;
+      margin:0 5%;
     }
 
     main.error .error-number {
@@ -45,9 +46,14 @@
     main.error .error-number text {
       font-family: monospace;
     }
+    main.error a.button{
+      background-color: var(--link-color--red) !important;
+      color: var(--light-color);
+      margin-right: 10px;
+    }
   </style>
   <link rel="stylesheet" href="/styles/lazy-styles.css">
-</head>
+</head> 
 
 <body>
   <header></header>

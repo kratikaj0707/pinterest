@@ -29,13 +29,13 @@
   }
   
   .login-form input:focus {
-    border-color: #0077cc;
+    border-color: #ffd3d1;
     outline: none;
   }
   
   .login-form button {
     padding: 0.8rem 1rem;
-    background-color: #0077cc;
+    background-color: var(--link-color--red);
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -45,6 +45,7 @@
   }
   
   .login-form button:hover {
-    background-color: #005fa3;
+    background-color: var(--link-color-hover);
+    
   }
   

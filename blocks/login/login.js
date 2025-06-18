@@ -29,7 +29,7 @@ export default async function decorate(block) {
   
     const submitBtn = document.createElement('button');
     submitBtn.type = 'submit';
-    submitBtn.textContent = 'Login';
+    submitBtn.textContent = 'Log in';
     form.appendChild(submitBtn);
   
     form.addEventListener('submit', async (e) => {
