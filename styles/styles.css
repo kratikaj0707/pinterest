@@ -12,19 +12,20 @@
 
 :root {
   /* colors */
-  --background-color: #ffffff;
-  --light-color: #ffffff;
-  --dark-color: #000000;
-  --text-color: #000000;
-  --color--lightgrey:#f0f0eb;
-  --link--color--grey:#e0e0d9;
-  --link-color--red: #e60023;
+  --background-color: #fff;
+  --light-color: #fff;
+  --dark-color: #000;
+  --text-color: #000;
+  --color-lightgrey:#f0f0eb;
+  --link-color-grey:#e0e0d9;
+  --link-color-red: #e60023;
   --link-color-hover:#cc001f;
   --link-hover-color: #d1d1c7;
   --background-color-search:#f1f1f1;
+
   /* fonts */
-  --body-font-family: 'Pin-Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Arial, sans-serif !important;
-  --heading-font-family:'Pin-Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Arial, sans-serif !important;
+  --body-font-family: 'Pin-Sans', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen-sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', ubuntu, cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', helvetica, 'ヒラギノ角ゴ Pro W3', 'メイリオ', meiryo, 'ＭＳ Ｐゴシック', arial, sans-serif !important;
+  --heading-font-family:'Pin-Sans', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen-sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', ubuntu, cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', helvetica, 'ヒラギノ角ゴ Pro W3', 'メイリオ', meiryo, 'ＭＳ Ｐゴシック', arial, sans-serif !important;
   
   /* body sizes */
   --body-font-size-m: 18px;
@@ -41,19 +42,18 @@
 
   /* nav height */
   --nav-height: 80px;
-
   --main-margin:5px 5px;
 }
 
 /* fallback fonts */
 @font-face {
-  font-family: 'Pin-Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Arial, sans-serif !important;
+  font-family: Pin-Sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Arial, sans-serif !important;
   size-adjust: 88.82%;
   src: local('Arial');
 }
 
 @font-face {
-  font-family: 'Pin-Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Arial, sans-serif !important;
+  font-family: Pin-Sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Arial, sans-serif !important;
   size-adjust: 99.529%;
   src: local('Arial');
 }
@@ -72,7 +72,6 @@
   --heading-font-size-m: 14px;
   --heading-font-size-s: 10px;
   --heading-font-size-xs: 8px;
-
   --main-margin:5px 14px ;
   }
 }
@@ -112,6 +111,7 @@ h4,
 h5,
 h6 {
   margin-top: 0.8em;
+
   /* margin-bottom: 0.25em; */
   font-family: var(--heading-font-family);
   font-weight: 700;
@@ -121,16 +121,18 @@ h6 {
 
 h1 { font-size: var(--heading-font-size-xxl); }
 h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
+
+h3 { 
+  font-size: var(--heading-font-size-l); 
+  line-height: 1.4; }
+
+h4 {
+   font-size: var(--heading-font-size-m); 
+   line-height: 1.5;
+  }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
-h3{
-  line-height: 1.4;
-}
-h4{
-  line-height: 1.5;
-}
+
 p,
 dl,
 ol,
@@ -167,13 +169,12 @@ button {
 
 /* links */
 a:any-link {
-  color: var(--link-color--red);
+  color: var(--link-color-red);
   text-decoration: none;
   overflow-wrap: break-word;
 }
 
 a:hover {
-  
   color: var(--link-hover-color);
   text-decoration: none;
 }
@@ -194,7 +195,7 @@ button {
   line-height: 1.5;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link--color--grey);
+  background-color: var(--link-color-grey);
   color: var(--text-color);
   cursor: pointer;
   overflow: hidden;
@@ -219,7 +220,8 @@ button:disabled:hover {
 
 a.button.secondary,
 button.secondary {
-  background-color: var(--link--color--grey);
+  background-color: var(--link-color-grey);
+
   /* border: 2px solid currentcolor; */
   color: var(--text-color);
 }
@@ -249,6 +251,7 @@ main > .section {
 main > .section > div {
   max-width: 1200px;
   margin: auto;
+
   /* padding: 0 24px; */
 }
 
