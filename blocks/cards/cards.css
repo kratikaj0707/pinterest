@@ -310,7 +310,7 @@
 
 /* Media Queries */
 
-@media (width >= 768px) {
+@media (width >= 600px) {
   .cards.square li {
     min-width: 350px;
   }

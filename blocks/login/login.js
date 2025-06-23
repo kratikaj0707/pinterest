@@ -1,12 +1,11 @@
 import { fetchPlaceholders } from '../../scripts/placeholders.js';
 
-const config = await fetch('/config.json').then((res) => res.json());
-const { apiBaseUrl } = config;
+
 export default async function decorate(block) {
   const placeholders = await fetchPlaceholders();
   const { login } = placeholders;
   const fields = [...block.querySelectorAll('p')];
-  block.innerHTML = ''; // Clear block content
+  block.innerHTML = '';
 
   const form = document.createElement('form');
   form.classList.add('login-form');
@@ -46,28 +45,23 @@ export default async function decorate(block) {
     });
 
     try {
-      const response = await fetch(`${apiBaseUrl}/auth-routes/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(body),
-      });
-
-      if (response.ok) {
-        const data = await response.json(); // assuming the response contains a JSON body
-        console.log(data);
-        localStorage.setItem('userId', data.user.id);
-        localStorage.setItem('userName', data.user.username);
-        window.location.href = '/'; // redirect to homepage
+      const { username, password } = body; 
+      const validUsername = 'admin';
+      const validPassword = '1234';
+    
+      if (username === validUsername && password === validPassword) {
+        const user = { id: 'local123', username };
+        localStorage.setItem('userId', user.id);
+        localStorage.setItem('userName', user.username);
+        window.location.href = '/';
       } else {
-        const msg = await response.text();
-        alert(`Login failed: ${msg}`);
+        alert('Login failed: Invalid username or password');
       }
     } catch (err) {
       console.error('Login error:', err);
       alert('Something went wrong. Please try again.');
     }
+    
   });
 
   block.appendChild(form);
