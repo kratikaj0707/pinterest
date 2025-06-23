@@ -7,33 +7,33 @@
     box-shadow: 0 2px 10px rgb(0 0 0 / 5%);
     background-color: #fff;
     font-family: Arial, sans-serif;
-  }
-  
-  .login-form {
+}
+
+.login-form {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-  }
-  
-  .login-form label {
+}
+
+.login-form label {
     font-weight: 600;
     margin-bottom: 0.3rem;
-  }
-  
-  .login-form input {
+}
+
+.login-form input {
     padding: 0.7rem 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.2s;
-  }
-  
-  .login-form input:focus {
+}
+
+.login-form input:focus {
     border-color: #ffd3d1;
     outline: none;
-  }
-  
-  .login-form button {
+}
+
+.login-form button {
     padding: 0.8rem 1rem;
     background-color: var(--link-color-red);
     color: #fff;
@@ -42,10 +42,8 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.2s;
-  }
-  
-  .login-form button:hover {
+}
+
+.login-form button:hover {
     background-color: var(--link-color-hover);
-    
-  }
-  
+}
